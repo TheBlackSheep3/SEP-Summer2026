@@ -9,10 +9,11 @@
 )
 
 #title-slide(
-  logo: image("images/logo_ccc.png"),
-  extra: [
-    Institut für Wirtschaftsinformatik\
-    Wirtschaftswissenschaftliche Fakultät\
-    Universität Leipzig
-  ]
+  extra: grid(
+    columns: 2,
+    align: horizon,
+    column-gutter: 0.5em,
+    [in Kooperation mit],
+    context image("images/logo_ccc.png", height: 0.1 * page.height),
+  )
 )
