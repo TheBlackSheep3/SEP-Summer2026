@@ -67,6 +67,12 @@
         #align(center)[#subtitle]
       ]
     }
+    if logo != none {
+      context {
+        set image(height: 0.186 * page.height)
+        place(logo, dx: 58%, dy: 80pt)
+      }
+    }
     v(50pt)
     [
       #text(32pt)[*#title*]
