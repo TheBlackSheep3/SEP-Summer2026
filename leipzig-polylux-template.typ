@@ -1,5 +1,5 @@
 #import "@preview/polylux:0.4.0": slide as polylux-slide
-#import "@preview/cetz:0.4.2"
+#import "@preview/cetz:0.4.2": canvas, draw, matrix
 
 #let m-dark-orange = rgb(255, 152, 0)
 #let m-granat = rgb(176, 47, 44)
@@ -41,8 +41,23 @@
   date-format: "[month repr:long] [day], [year]",
   extra: none,
 ) = {
+  set page(background: context {
+      let w = page.width
+      let h = page.height
+      canvas(length: w, {
+        import draw: *
+        let right-edge = 1
+        let bottom-edge = h/w
+        set-transform(matrix.transform-scale((1, 1)))
+        stroke(none)
+        line((0, 0), (0, bottom-edge), (right-edge, bottom-edge), (right-edge, 0), close: true, fill: none, stroke: none)
+        line((0.65 * right-edge, 1 * bottom-edge), (1 * right-edge, 1 * bottom-edge), (1 * right-edge, 0.65 * bottom-edge), close: true, fill: m-aquamarin)
+        line((0.895 * right-edge, 1 * bottom-edge), (1 * right-edge, 1 * bottom-edge), (1 * right-edge, 0.65 * bottom-edge), (0.925 * right-edge, 0.725 * bottom-edge), close: true, fill: m-karneol)
+        line((1 * right-edge, 0.65 * bottom-edge), (0.925 * right-edge, 0.725 * bottom-edge), (1 * right-edge , 0 * bottom-edge), close: true, fill: m-granat)
+      })
+    }
+  )
   let content = {
-    
     context {
       image("images/logo_leipzig.svg", height: 0.23175225 * page.height)
     }
@@ -58,11 +73,6 @@
       #v(1em)
       #text(18.6pt)[#extra]
     ]
-
-    cetz.canvas(
-      import cetz.draw: *
-    )
-
   }
 
   polylux-slide(content)
