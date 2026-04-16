@@ -62,9 +62,12 @@
       image("images/logo_leipzig.svg", height: 0.23175225 * page.height)
     }
     if short-title != none {
-      set text(26pt)
-      align(center)[#subtitle]
+      place(center)[
+        #set text(26pt)
+        #align(center)[#subtitle]
+      ]
     }
+    v(50pt)
     [
       #text(32pt)[*#title*]
 
