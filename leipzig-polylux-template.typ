@@ -8,13 +8,36 @@
 #let m-light-gray = rgb(201, 201, 201)
 #let m-basalt = rgb(38, 42, 49)
 
-/* General theming and show rules */
-#let leipzig-theme(aspect-ratio: "16-9", body) = {
+#let m-subtitle = state("m-subtitle", none)
+#let m-shorttitle = state("m-shorttitle", none)
+
+// Theming, show rules and meta data
+//
+// - title: Presentation title.
+// - author: List of authors.
+// - subtitle: (Optional) subtitle for more info.
+// - short-title: (Optional) short title for the header.
+// - date: (Optional) date of the presentation.
+#let leipzig-theme(
+  title: [],
+  author: ("Your Name",),
+  subtitle: none,
+  short-title: none,
+  date: datetime.today(),
+  body
+) = {
+  set document(
+    title: title,
+    author: author,
+    date: date,
+  )
+  m-subtitle.update(subtitle)
+  m-shorttitle.update(short-title)
+
   set page(
-    paper: "presentation-" + aspect-ratio,
+    paper: "presentation-169",
     margin: (x: 54.7pt, y: 26.5pt)
   )
-
   set text(font: "Arial", fill: black, 20.2pt)
 
    body
@@ -23,21 +46,11 @@
 
 // Declare the title slide.
 //
-// - title: Presentation title.
-// - author: Consists of author.name and author.mail.
-// - subtitle: (Optional) subtitle for more info.
-// - short-title: (Optional) short title for the header.
 // - logo: (Optional) institution / faculty logo.
-// - date: (Optional) date of the presentation.
 // - date-format: (Optional) date format to display the presentation date.
 // - extra: (Optional) info below the date and author, like the faculty.
 #let title-slide(
-  title: [],
-  author: (name: "Your Name", mail: "example@uni-leipzig.de"),
-  subtitle: none,
-  short-title: none,
   logo: none,
-  date: datetime.today(),
   date-format: "[month repr:long] [day], [year]",
   extra: none,
 ) = {
