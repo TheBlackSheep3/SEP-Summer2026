@@ -35,7 +35,7 @@
   m-shorttitle.update(short-title)
 
   set page(
-    paper: "presentation-169",
+    paper: "presentation-16-9",
     margin: (x: 54.7pt, y: 26.5pt)
   )
   set text(font: "Arial", fill: black, 20.2pt)
@@ -74,7 +74,8 @@
     context {
       image("images/logo_leipzig.svg", height: 0.23175225 * page.height)
     }
-    if short-title != none {
+    let subtitle = context m-subtitle.get()
+    if subtitle != none {
       place(center)[
         #set text(26pt)
         #align(center)[#subtitle]
@@ -88,10 +89,10 @@
     }
     v(50pt)
     [
-      #text(32pt)[*#title*]
+      #text(32pt)[*#context document.title*]
 
-      #date.display(date-format)\
-      #author.name
+      #context document.date.display(date-format)\
+      #context document.author.join(", ")
       #v(1em)
       #text(18.6pt)[#extra]
     ]

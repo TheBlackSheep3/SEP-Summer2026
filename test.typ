@@ -1,16 +1,18 @@
 #import "leipzig-polylux-template.typ": *
 
 #show: leipzig-theme.with(
-  title: "Title of the presentation",
-  subtitle: "Seminar title (e.g. Group seminar)",
-  short-title: "Short title",
+  title: [New module imaso#sym.trademark.registered maintenance -- Report],
+  author: ("Niklas Dießner", "Lennart Dittmann", "Jixuan Li",),
+  subtitle: "Software Engineering Project",
+  short-title: "imaso Module Report",
+  date: datetime(year: 2026, month: 4, day: 20,)
 )
 
 #title-slide(
-  logo: image("images/ChemistryLogo.png"),
+  logo: image("images/logo_ccc.png"),
   extra: [
-    Wilhelm-Ostwald-Institut für Physikalische und Theoretische Chemie\
-    Fakultät für Chemie und Mineralogie\
+    Institut für Wirtschaftsinformatik\
+    Wirtschaftswissenschaftliche Fakultät\
     Universität Leipzig
   ]
 )
