@@ -6,10 +6,13 @@
 #let m-karneol = rgb(214, 66, 66)
 #let m-aquamarin = rgb(138, 194, 209)
 #let m-light-gray = rgb(201, 201, 201)
+#let m-gray = rgb(128, 128, 128)
 #let m-basalt = rgb(38, 42, 49)
 
 #let m-subtitle = state("m-subtitle", none)
 #let m-shorttitle = state("m-shorttitle", none)
+
+#let m-pages = counter("m-page")
 
 // Theming, show rules and meta data
 //
@@ -71,6 +74,7 @@
     }
   )
   let content = {
+    m-pages.step()
     context {
       image("images/logo_leipzig.svg", height: 0.23175225 * page.height)
     }
@@ -96,6 +100,42 @@
       #v(1em)
       #text(18.6pt)[#extra]
     ]
+  }
+
+  polylux-slide(content)
+}
+
+// Basic slide function.
+//
+// - heading: (Optional) heading of the slide.
+#let slide(
+  heading: none,
+  body
+) = {
+  set page(
+    margin: (left: 6.8%, right: 7%, bottom: 13%),
+    background: context {
+      let w = page.width
+      let h = page.height
+      set par(leading: 1.4pt)
+      cetz.canvas(length: w, {
+        import cetz.draw: *
+        let r = 1   // right edge
+        let b = h/w // bottom edge
+        set-transform(cetz.matrix.transform-scale((1, 1)))
+        rect((0,0), (1, b), stroke: none, fill: none)
+        line((0.068, 0.88 * b), (0.93, 0.88 * b), stroke: m-karneol+0.4pt)
+        line((0.068, 0.885 * b), (0.93, 0.885 * b), stroke: m-gray+0.4pt)
+        line((0.07, 0.89 * b), (0.07, 0.98 * b), stroke: m-gray+0.8pt)
+        content((0.078, 0.935 * b), text(size: 12.6pt, black)[UNIVERSITÄT\ LEIPZIG], anchor: "west")
+        content((0.93, 0.935 * b), text(size: 12.6pt, m-karneol)[#context m-pages.get().first()], anchor: "east")
+      })
+    },
+  )
+  let content = {
+    show: align.with(horizon)
+    m-pages.step()
+    body
   }
 
   polylux-slide(content)
