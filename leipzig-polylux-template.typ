@@ -106,6 +106,8 @@
   polylux-slide(content)
 }
 
+#let typst-heading = heading
+
 // Basic slide function.
 //
 // - heading: (Optional) heading of the slide.
@@ -136,6 +138,9 @@
   let content = {
     show: align.with(horizon)
     m-pages.step()
+    if heading != none {
+      align(top+left, typst-heading(level: 1, heading))
+    }
     body
   }
 
