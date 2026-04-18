@@ -11,6 +11,7 @@
 
 #let m-subtitle = state("m-subtitle", none)
 #let m-shorttitle = state("m-shorttitle", none)
+#let m-section = state("m-section", none)
 
 #let m-pages = counter("m-page")
 
@@ -48,6 +49,10 @@
    body
 }
 
+#let fontsize-LARGE = 32pt
+#let fontsize-Large = 26pt
+#let fontsize-small = 18.6pt
+#let fontsize-tiny  = 12.6pt
 
 // Declare the title slide.
 //
@@ -83,7 +88,7 @@
     let subtitle = context m-subtitle.get()
     if subtitle != none {
       place(center)[
-        #set text(26pt)
+        #set text(fontsize-Large)
         #align(center)[#subtitle]
       ]
     }
@@ -95,12 +100,12 @@
     }
     v(50pt)
     [
-      #text(32pt)[*#context document.title*]
+      #text(fontsize-LARGE)[*#context document.title*]
 
       #context document.date.display(date-format)\
       #context document.author.join(", ")
       #v(1em)
-      #text(18.6pt)[#extra]
+      #text(fontsize-small)[#extra]
     ]
     m-pages.step()
   }
@@ -117,23 +122,38 @@
   heading: none,
   body
 ) = {
+  if heading != none {
+    m-section.update(heading)
+  }
   set page(
-    margin: (left: 6.8%, right: 7%, bottom: 13%),
+    margin: (x: 7%, y: 13%),
     background: context {
       let w = page.width
       let h = page.height
+      let thin = 0.8pt
+      let very-thin = 0.4pt
       set par(leading: 1.4pt)
       cetz.canvas(length: w, {
         import cetz.draw: *
         let r = 1   // right edge
         let b = h/w // bottom edge
         set-transform(cetz.matrix.transform-scale((1, 1)))
+        // ensure positioning is correct
         rect((0,0), (1, b), stroke: none, fill: none)
-        line((0.068, 0.88 * b), (0.93, 0.88 * b), stroke: m-karneol+0.4pt)
-        line((0.068, 0.885 * b), (0.93, 0.885 * b), stroke: m-gray+0.4pt)
-        line((0.07, 0.89 * b), (0.07, 0.98 * b), stroke: m-gray+0.8pt)
-        content((0.078, 0.935 * b), text(size: 12.6pt, black)[UNIVERSITÄT\ LEIPZIG], anchor: "west")
-        content((0.93, 0.935 * b), text(size: 12.6pt, m-karneol)[#context m-pages.get().first()], anchor: "east")
+
+        // header
+        line((0, 0.03 * b), (0.05, 0.03 * b), stroke: black+very-thin)
+        line((0, 0.035 * b), (0.05, 0.035 * b), stroke: m-gray+very-thin)
+        let short-title = m-shorttitle.get()
+        let section = m-section.get()
+        content((0.06, 0.035 * b), text(fontsize-small)[*#context if short-title == none { document.title } else { short-title }* | #if section != none [#section] ], anchor: "west")
+
+        // footer
+        line((0.068, 0.88 * b), (0.93, 0.88 * b), stroke: m-karneol+very-thin)
+        line((0.068, 0.885 * b), (0.93, 0.885 * b), stroke: m-gray+very-thin)
+        line((0.07, 0.89 * b), (0.07, 0.98 * b), stroke: m-gray+thin)
+        content((0.078, 0.935 * b), text(size: fontsize-tiny, black)[UNIVERSITÄT\ LEIPZIG], anchor: "west")
+        content((0.93, 0.935 * b), text(size: fontsize-tiny, m-karneol)[#context m-pages.get().first()], anchor: "east")
       })
     },
   )
