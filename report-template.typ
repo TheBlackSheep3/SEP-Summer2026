@@ -57,7 +57,7 @@
   ]
   slide(heading: [Last Period Overview])[
     #set table(stroke: none, align: left)
-    #set heading(level: 2)
+    #set heading(level: 2, outlined: false)
     #let itemize = el => list(el)
     #grid(
       columns: (1fr, 1fr),
