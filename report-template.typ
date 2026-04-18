@@ -86,4 +86,8 @@
       }
     )
   ]
+  slide(heading: [Q & A])[
+    #set align(center)
+    Time for your questions! #emoji.face.smile.slight
+  ]
 }
