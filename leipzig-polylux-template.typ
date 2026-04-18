@@ -43,6 +43,8 @@
   )
   set text(font: "Arial", fill: black, 20.2pt)
 
+  set list(marker: text(m-karneol)[--])
+
    body
 }
 
