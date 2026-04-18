@@ -56,6 +56,8 @@
     )
   ]
   slide(heading: [Last Period Overview])[
+    #set table(stroke: none, align: left)
+    #let itemize = el => list(el)
     #grid(
       columns: (1fr, 1fr),
       rows: (1fr, 1fr),
@@ -65,20 +67,26 @@
           grid.cell(
             colspan: 2,
             [
-              #align(center)[== What went well]
-              #list(..overview.well)
+              #align(center)[
+                == What went well
+                #table(..overview.well.map(itemize))
+              ]
             ],
           ),
         )
       } else {
         (
           [
-            #align(center)[== Highlights]
-            #list(..overview.highlights)
+            #align(center)[
+              == Highlights
+                #table(..overview.highlights.map(itemize))
+            ]
           ],
           [
-            #align(center)[== What went well]
-            #list(..overview.well)
+            #align(center)[
+              == What went well
+              #table(..overview.well.map(itemize))
+            ]
           ],
         )
       },
@@ -87,20 +95,26 @@
           grid.cell(
             colspan: 2,
             [
-              #align(center)[== What can be improved]
-              #list(..overview.improvements)
+              #align(center)[
+                == What can be improved
+                #table(..overview.improvements.map(itemize))
+              ]
             ]
           ),
         )
       } else {
         (
           [
-            #align(center)[== What can be improved]
-            #list(..overview.improvements)
+            #align(center)[
+              == What can be improved
+              #table(..overview.improvements.map(itemize))
+            ]
           ],
           [
-            #align(center)[== Where we need help]
-            #list(..overview.help)
+            #align(center)[
+              == Where we need help
+              #table(..overview.help.map(itemize))
+            ]
           ],
         )
       }
