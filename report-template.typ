@@ -61,8 +61,8 @@
     #let itemize = el => list(el)
     #grid(
       columns: (1fr, 1fr),
-      rows: (1fr, 1fr),
-      gutter: 4em,
+      rows: (auto, auto),
+      gutter: 1em,
       align: top+center,
       ..if overview.highlights.len() == 0 {
         (
