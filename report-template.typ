@@ -19,6 +19,7 @@
   date: datetime.today(),
   status: (:),
   overview: (highlights: (), well: (), improvements: (), help: ()),
+  additional-content
 ) = {
   if overview.highlights.len() > 3 or overview.well.len() > 3 or overview.improvements.len() > 3 or overview.help.len() > 3 {
     panic("highlights, well, improvements and help are expected to contain three elements at most")
@@ -55,6 +56,7 @@
       [#smiley(status.group)], [#smiley(status.project)], [#smiley(status.progress)]
     )
   ]
+
   slide(heading: [Last Period Overview])[
     #set table(stroke: none, align: left)
     #set heading(level: 2, outlined: false)
@@ -86,6 +88,9 @@
       }
     )
   ]
+
+  additional-content
+
   slide(heading: [Q & A])[
     #set align(center)
     Time for your questions! #emoji.face.smile.slight
