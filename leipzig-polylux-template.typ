@@ -74,7 +74,7 @@
     }
   )
   let content = {
-    m-pages.step()
+    m-pages.update(1)
     context {
       image("images/logo_leipzig.svg", height: 0.23175225 * page.height)
     }
@@ -100,6 +100,7 @@
       #v(1em)
       #text(18.6pt)[#extra]
     ]
+    m-pages.step()
   }
 
   polylux-slide(content)
