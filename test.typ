@@ -57,65 +57,31 @@
   ]
   slide(heading: [Last Period Overview])[
     #set table(stroke: none, align: left)
+    #set heading(level: 2)
     #let itemize = el => list(el)
     #grid(
       columns: (1fr, 1fr),
       rows: (1fr, 1fr),
       gutter: 4em,
+      align: top+center,
       ..if overview.highlights.len() == 0 {
         (
-          grid.cell(
-            colspan: 2,
-            [
-              #align(center)[
-                == What went well
-                #table(..overview.well.map(itemize))
-              ]
-            ],
-          ),
+          grid.cell(colspan: 2, [#heading[What went well] #table(..overview.well.map(itemize))],),
         )
       } else {
         (
-          [
-            #align(center)[
-              == Highlights
-                #table(..overview.highlights.map(itemize))
-            ]
-          ],
-          [
-            #align(center)[
-              == What went well
-              #table(..overview.well.map(itemize))
-            ]
-          ],
+          [#heading[Highlights] #table(..overview.highlights.map(itemize))],
+          [#heading[What went well] #table(..overview.well.map(itemize))],
         )
       },
       ..if overview.help.len() == 0 {
         (
-          grid.cell(
-            colspan: 2,
-            [
-              #align(center)[
-                == What can be improved
-                #table(..overview.improvements.map(itemize))
-              ]
-            ]
-          ),
+          grid.cell(colspan: 2, [#heading[What can be improved] #table(..overview.improvements.map(itemize))]),
         )
       } else {
         (
-          [
-            #align(center)[
-              == What can be improved
-              #table(..overview.improvements.map(itemize))
-            ]
-          ],
-          [
-            #align(center)[
-              == Where we need help
-              #table(..overview.help.map(itemize))
-            ]
-          ],
+          [#heading[What can be improved] #table(..overview.improvements.map(itemize))],
+          [#heading[Where we need help] #table(..overview.help.map(itemize))],
         )
       }
     )
