@@ -13,7 +13,7 @@
     - probably underlying challenge not yet disclosed
     - work with use cases -> what is missing in the old one, what needs to work in the new one
     - why don't we improve the old planner as opposed to the new planner
-    - solver, UI, manual interaction (one or multiple use cases)
+    - solver, user interface, manual interaction (one or multiple use cases)
 
 # Topic for next Week
 - What's the topic?
