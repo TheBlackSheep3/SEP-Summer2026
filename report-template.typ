@@ -1,4 +1,17 @@
+#import "@preview/zeitline:0.1.1": timeline
 #import "leipzig-polylux-template.typ": *
+
+#let timeline-theme = (
+  colors: (
+    accent: m-karneol,
+    muted: black,
+    line: m-gray,
+  ),
+  sizes: (
+    date: fontsize-normal,
+    body: fontsize-small,
+  ),
+)
 
 #let status = (
   good: "good",

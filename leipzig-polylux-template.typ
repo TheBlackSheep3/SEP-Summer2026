@@ -15,6 +15,12 @@
 
 #let m-pages = counter("m-page")
 
+#let fontsize-LARGE  = 32pt
+#let fontsize-Large  = 26pt
+#let fontsize-normal = 20.2pt
+#let fontsize-small  = 18.6pt
+#let fontsize-tiny   = 12.6pt
+
 // Theming, show rules and meta data
 //
 // - title: Presentation title.
@@ -42,17 +48,12 @@
     paper: "presentation-16-9",
     margin: (x: 54.7pt, y: 26.5pt)
   )
-  set text(font: "Arial", fill: black, 20.2pt)
+  set text(font: "Arial", fill: black, fontsize-normal)
 
   set list(marker: text(m-karneol)[--])
 
    body
 }
-
-#let fontsize-LARGE = 32pt
-#let fontsize-Large = 26pt
-#let fontsize-small = 18.6pt
-#let fontsize-tiny  = 12.6pt
 
 // Declare the title slide.
 //
