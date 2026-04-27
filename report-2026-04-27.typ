@@ -4,7 +4,7 @@
 #show: report.with(
   date: datetime(year: 2026, month: 4, day: 27),
   status: (group: status.good, project: status.good, progress: status.neutral),
-  overview: (highlights: ("Gathered ideas for functionalities and constraints","Decided on relevant user group",), well: ("Customer goes with the idea of requirements board","On-Site workshop is set up",), improvements: ("Scope of the project",), help: ("Ideas for methodology for on-site workshop"))
+  overview: (highlights: ("Gathered ideas for functionalities and constraints","Decided on relevant user group",), well: ("Customer goes with the idea of requirements board","On-Site workshop is set up",), improvements: ("Scope of the project",), help: ("Ideas for methodology for on-site workshop",))
 )
 
 #slide(heading: [Relevant Events])[
@@ -35,7 +35,7 @@
 
   #let task-style = (stroke: 2pt+m-aquamarin)
   #let taskgroup-style = (stroke: 4pt+m-granat)
-  #block(height: 80%)[#scale(65%)[
+  #block(height: 80%)[#scale(60%)[
     #timeliney.timeline(
       show-grid: true,
       {
