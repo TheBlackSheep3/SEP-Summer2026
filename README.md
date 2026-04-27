@@ -22,12 +22,12 @@ git lfs pull
 You're good to go. :)
 
 ## Usage
-Compile everything (requires just)
+Compile everything (requires `just`)
 ```sh
 just
 ```
 
-Start the presenation (requires just and pympress)
+Start the presenation (requires `just` and `pympress`)
 ```sh
 just present
 ```
