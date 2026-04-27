@@ -3,8 +3,8 @@
 
 #show: report.with(
   date: datetime(year: 2026, month: 4, day: 27),
-  status: (group: status.good, project: status.good, progress: status.neutral),
-  overview: (highlights: ("Gathered ideas for functionalities and constraints","Decided on relevant user group",), well: ("Customer goes with the idea of requirements board","On-Site workshop is set up",), improvements: ("Scope of the project",), help: ("Ideas for methodology for on-site workshop",))
+  status: (group: status.good, project: status.good, progress: status.good),
+  overview: (highlights: ("Gathered ideas for functionalities and constraints","Decided on relevant user group",), well: ("Customer is on board with the idea of requirements board","On-Site workshop is set up",), improvements: ("Scope of the project",), help: ("Ideas for methodology for on-site workshop",))
 )
 
 #slide(heading: [Relevant Events])[
