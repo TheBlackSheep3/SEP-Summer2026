@@ -8,7 +8,7 @@
     - Aktuelle Rechte-Struktur
         - Shift Planner → Schichten anlegen
         - Shift Admin → Schichten auch löschen
-    → Generell gesehen: ‘Schichtauswahl’ in imaso muss überarbeitet werden, sonst bietet Legacy bereits sehr viel
+        → Generell gesehen: ‘Schichtauswahl’ in imaso muss überarbeitet werden, sonst bietet Legacy bereits sehr viel
 
 # Anforderungen
 - Arbeitszeitbeschränkung als optionaler Check
