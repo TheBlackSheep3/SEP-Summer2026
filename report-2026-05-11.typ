@@ -4,7 +4,7 @@
 #show: report.with(
   date: datetime(year: 2026, month: 5, day: 11),
   status: (group: status.good, project: status.good, progress: status.neutral),
-  overview: (highlights: ("First Concept of Working Package and Mockup",), well: ("Intra-team Collaboration",), improvements: ("Preparation for Weekly-meeting",), help: ("",))
+  overview: (highlights: ("First Concept of Working Package and Mockup",), well: ("Intra-team Collaboration",), improvements: ("Preparation for Weekly-meeting",), help: (),)
 )
 
 #slide(heading: [Relevant Events])[
@@ -75,7 +75,7 @@
         )
 
         milestone(
-          at: 41/30,
+          at: 1+11/31,
           style: milestone-style,
           align(center, [
             #text(m-karneol)[*Today*]
