@@ -14,3 +14,9 @@ report-2026-05-11:
 
 present: report-2026-05-11
   pympress --talk-time=10 report-2026-05-11.pdf
+
+topic:
+  typst compile task-prioritisation.typ
+
+present-topic: topic
+  pympress --talk-time=30 task-prioritisation.pdf
