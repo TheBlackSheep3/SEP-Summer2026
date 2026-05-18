@@ -1,33 +1,42 @@
-20.04.2026
+27.04.2026
 
-# Report
-- open scope from CCC side, request from a client?
-    - client idea is pretty rough
-    - legacy feature which is already implemented which might also need to be connected 
-    - potential for feature creep
-- direct communication to the client? -> no
-- using AI to get a grasp shift planning challenges
-    - not yet but will be needed
-    - quite complex optimization problem
-- best practices to get scope assembled
-    - probably underlying challenge not yet disclosed
-    - work with use cases -> what is missing in the old one, what needs to work in the new one
-    - why don't we improve the old planner as opposed to the new planner
-    - solver, user interface, manual interaction (one or multiple use cases)
+SEP Session 2 — CCC Gruppe
 
-# Topic for next Week
-- What's the topic?
-- In which format?
-- Who does the preparation work (if needed)?
-- Why should we do it?
+- Figma Board too large to see from audience
 
-## Requirement Collection Acceleration (7 votes)
-- open discussion, per group preparation 
-- each group (max 5 min / group) + 15 min discussion
+# Accelerate Requirements Collection
+- rough ideas or phrasing as talking points
+    - we want that and we don't want that
+- structured questioning
+    - easy to define what they want the product to do
+- aggressive prioritizing
+- explicit and implicit requirements
+    - communicate on implications
+- talk to the right people (not everyone in huge meetings)
+---
+- SMART criteria
+    - specific
+    - measurable
+    - achievable
+    - 
+    - time bound
+- priorities for requirements
+- whats crucial, not crucial, nice to have, irrelevant
+- Pareto 80/20 rule
+- tools like Jira, 
+- active listening (repeat what other said to ensure you understood it right)
+- meeting protocols to have common ground on the discussed topics
+- prepare proposals and let the stakeholder choose
+---
+- use of user stories
 
-## Handling the client / customer (1 vote)
-- open discussion, prepared scenario (customer <-> team), do and don't
-- discussion (All), prepare scenario (Max, Lenny, Danilo)
+## Open Discussion
+- Prepare the collection
+    - Audience
+    - Context knowledge for all participants (domain knowledge, technical knowledge)
+- Prioritizing (most relevant requirements) - less is more
+- Collection (initial) -> time boxed (1 sprint / 2 weeks)
 
-## x Roles <-> y Members (x >> y) (6 votes)
-- learn from others (knowledge or experience)
+# Next Weeks Topic - x Roles <-> y Members (x >> y) (7 votes)
+- collect roles
+- try to find potential sources of conflict
