@@ -4,7 +4,7 @@
 #show: report.with(
   date: datetime(year: 2026, month: 6, day: 01),
   status: (group: status.neutral, project: status.neutral, progress: status.good),
-  overview: (highlights: ("Customer happy with screen mockups", Getting into the code soon!), well: ("Communication with customer",), improvements: ("Team communication about tasks and availabilities",), help: (),)
+  overview: (highlights: ("Customer happy with screen mockups", "Getting into the code soon!"), well: ("Customer satisfaction",), improvements: ("Team communication about tasks and availabilities", "Clarity of responsibilities on customer-side"), help: (),)
 )
 
 
@@ -13,7 +13,7 @@
     (
       (date: "May 28", desc: "Final review and approval of mock-ups with customer"),
       (date: "June 04", desc: "Drafting of initial user stories to work on"),
-      (date: "June 08", desc: "Start implementation"),
+      (date: "June 08", desc: "Planned: Starting with implementation"),
       
     ),
     theme: (colors: timeline-theme.colors, sizes: (date: fontsize-small, body: fontsize-tiny))
@@ -24,7 +24,7 @@
 #slide(heading: [What did the customer expect from 'Design'?])[
   #align(center)[
     #figure(
-      context image("images/mockup_example.png", height: 0.5*page.height),
+      context image("images/mockups_example.png", height: 0.5*page.height),
       caption: ("Figma: Defining necessary data fields and functions on various screens"),
     )
   ]
@@ -88,7 +88,7 @@
         )
 
         milestone(
-          at: 1+18/31,
+          at: 2,
           style: milestone-style,
           align(center, [
             #text(m-karneol)[*Today*]
